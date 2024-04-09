@@ -1,6 +1,6 @@
 # Raylib Lorenz GPU
 
-<img align="left" style="width:260px" src="https://github.com/arceryz/raylib-gpu-particles/blob/master/demo.gif" width="288px">
+<img align="left" style="width:400px" src="https://github.com/arceryz/raylib-gpu-particles/blob/master/demo.gif" width="288px">
 
 **This example creates a 3D particle system fully on the GPU**.
 
