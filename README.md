@@ -1,12 +1,13 @@
 # Raylib Lorenz GPU
 
-<img align="left" style="width:400px" src="https://github.com/arceryz/raylib-gpu-particles/blob/master/demo.gif" width="288px">
+<img align="left" style="width:260px" src="https://github.com/arceryz/raylib-gpu-particles/blob/master/demo.gif" width="288px">
 
 **This example creates a 3D particle system fully on the GPU**.
 
 On a simple laptop (MSI Katana) you can draw 2 million particles per frame at 60 fps. The particles are rendered as triangles with direction and magnitude.
 
-Features:
+## Features
+
 - **Highly** documented, you will absolutely understand!
 - 100% GPU updated and drawn particles.
 - `raylib.h` API.
