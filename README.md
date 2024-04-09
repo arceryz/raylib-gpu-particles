@@ -1,4 +1,4 @@
-# Raylib Lorenz GPU
+# Raylib GPU Particles
 
 <img align="left" style="width:260px" src="https://github.com/arceryz/raylib-gpu-particles/blob/master/demo.gif" width="288px">
 
@@ -6,7 +6,9 @@
 
 On a simple laptop (MSI Katana) you can draw 2 million particles per frame at 60 fps. The particles are rendered as triangles with direction and magnitude.
 
-## Features
+---
+
+Features:
 
 - **Highly** documented, you will absolutely understand!
 - 100% GPU updated and drawn particles.
