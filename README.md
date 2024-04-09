@@ -4,7 +4,7 @@
 
 **This example creates a 3D particle system fully on the GPU**.
 
-On a simple laptop (MSI Katana) you can draw 2 million particles per frame at 60 fps. The particles are rendered as triangles with direction and magnitude.
+On a simple laptop (MSI Katana) you can draw 2 million particles per frame at 60 fps. The particles are rendered as triangles with direction and magnitude. ! Requires raylib to be compiled with `GRAPHIC_API=GRAPHICS_API_OPENGL_43` !
 
 The code is **Highly** documented, you will absolutely understand! It uses Raylib, rlgl (lower level Raylib) and Raygui. You can learn GPU Instancing, particle billboarding and rotating to movement and compute shaders all in Raylib!
 
