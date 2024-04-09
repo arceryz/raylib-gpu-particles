@@ -7,13 +7,12 @@ layout (location=0) in vec3 vertexPosition;
 // Input uniform values.
 layout (location=0) uniform mat4 projectionMatrix;
 layout (location=1) uniform mat4 viewMatrix;
-layout (location=2) uniform mat4 inverseViewMatrix;
-layout (location=3) uniform float particleScale;
+layout (location=2) uniform float particleScale;
 
 // The two buffers we will be reading from.
 // We can write to them here but should not.
-layout(std430, binding = 0) buffer ssbo0 { vec4 positions[]; };
-layout(std430, binding = 1) buffer ssbo1 { vec4 velocities[]; };
+layout(std430, binding=0) buffer ssbo0 { vec4 positions[]; };
+layout(std430, binding=1) buffer ssbo1 { vec4 velocities[]; };
 
 // We will only output color.
 out vec4 fragColor;
@@ -31,10 +30,11 @@ void main()
     // 1. Make the particle face the camera.
     // 2. Make the particle point to its direction of movement.
     //
-    // Point (1) we will achieve here by multiplying by the inverse view matrix.
-    // In the vec4 we set w=0 to avoid translation. We will add world position at the end.
+    // Point (1) we will achieve here by not multiplying by the view matrix,
+    // since the view matrix will rotate the vertex. We only need the translation from it.
+    // Therefore will add view-space world position at the end.
     float scale = 0.005*particleScale;
-    vec3 vertexView = (viewMatrix * inverseViewMatrix * vec4(vertexPosition, 0)).xyz * scale;
+    vec3 vertexView = vertexPosition*scale;
 
     // With the triangle facing the camera, we want it to now point in the
     // direction of its movement (in view space).

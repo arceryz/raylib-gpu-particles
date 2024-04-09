@@ -74,8 +74,8 @@ int main() {
 
     // Configure the vertex array with a single attribute of vec3.
     // This is the input to the vertex shader.
-    rlLoadVertexBuffer(vertices, sizeof(vertices),  false); // dynamic=false
     rlEnableVertexAttribute(0);
+    rlLoadVertexBuffer(vertices, sizeof(vertices),  false); // dynamic=false
     rlSetVertexAttribute(0, 3, RL_FLOAT, false, 0, 0);
     rlDisableVertexArray(); // Stop editing.
 
@@ -122,15 +122,13 @@ int main() {
 
             // Because we use rlgl, we must take care of matrices ourselves.
             // We need to only pass the projection and view matrix.
-            // We also pass the inverse view matrix for aligning particles to the camera.
+            // These will be used to make the particle face the camera and such.
             Matrix projection = rlGetMatrixProjection();
             Matrix view = GetCameraMatrix(camera);
-            Matrix inverseView = MatrixInvert(view);
 
             SetShaderValueMatrix(particleShader, 0, projection);
             SetShaderValueMatrix(particleShader, 1, view);
-            SetShaderValueMatrix(particleShader, 2, inverseView);
-            SetShaderValue(particleShader, 3, &particleScale, SHADER_UNIFORM_FLOAT);
+            SetShaderValue(particleShader, 2, &particleScale, SHADER_UNIFORM_FLOAT);
 
             rlBindShaderBuffer(ssbo0, 0);
             rlBindShaderBuffer(ssbo1, 1);
