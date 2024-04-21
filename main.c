@@ -38,8 +38,8 @@ int main() {
     //
     // Number of particles should be a multiple of 1024, our workgroup size (set in shader).
     int numParticles = 1024*100;
-    Vector4 *positions = RL_MALLOC(sizeof(Vector4[numParticles]));
-    Vector4 *velocities = RL_MALLOC(sizeof(Vector4[numParticles]));
+    Vector4 *positions = RL_MALLOC(sizeof(Vector4)*numParticles);
+    Vector4 *velocities = RL_MALLOC(sizeof(Vector4)*numParticles);
 
     for (int i = 0; i < numParticles; i++) {
         // We only use the XYZ components of position and velocity.
@@ -79,7 +79,7 @@ int main() {
     rlSetVertexAttribute(0, 3, RL_FLOAT, false, 0, 0);
     rlDisableVertexArray(); // Stop editing.
 
-    Camera camera = { { 2, 2, 2 }, {}, { 0, 1, 0 }, 35.0, CAMERA_PERSPECTIVE };
+    Camera camera = { { 2, 2, 2 }, { 0, 0, 0 }, { 0, 1, 0 }, 35.0, CAMERA_PERSPECTIVE };
     float time = 0;
     float timeScale = 0.2f;
     float sigma = 10;
@@ -139,7 +139,7 @@ int main() {
             rlDisableVertexArray(); 
             rlDisableShader();
 
-            DrawCubeWires((Vector3){}, 1.0, 1.0, 1.0, DARKGRAY);
+            DrawCubeWires((Vector3){ 0, 0, 0 }, 1.0, 1.0, 1.0, DARKGRAY);
             EndMode3D();
         }
 
