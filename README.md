@@ -8,8 +8,6 @@ On a simple laptop (MSI Katana) you can draw 2 million particles per frame at 60
 
 The code is **Highly** documented, you will absolutely understand! It uses Raylib, rlgl (lower level Raylib) and Raygui. You can learn GPU Instancing, particle billboarding and rotating to movement and compute shaders all in Raylib!
 
-*You can get raygui.h [here](https://github.com/raysan5/raygui/blob/master/src/raygui.h)*
-
 ---
 This example requires raylib to be compiled with `GRAPHIC_API=GRAPHICS_API_OPENGL_43`, otherwise you won't be able to use compute shaders.
 

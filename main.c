@@ -24,7 +24,6 @@ int main() {
         "Shaders/particle_vertex.glsl", 
         "Shaders/particle_fragment.glsl");
 
-
     //
     // Now we prepare the buffers that we connect to the shaders.
     // For each variable we want to give our particles, we create one buffer
