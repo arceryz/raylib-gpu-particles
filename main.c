@@ -2,6 +2,7 @@
 #include <rlgl.h>
 #include <raymath.h>
 #include <stdlib.h>
+#include <limits.h>
 
 #define RAYGUI_IMPLEMENTATION
 #include "raygui.h"
